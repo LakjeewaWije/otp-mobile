@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#afa4a4"
-    tools:context=".verification.Verify">
+    tools:context=".verification.VerifyActivity">
 
     <TextView
         android:id="@+id/digitfour"
@@ -81,7 +81,7 @@
         app:layout_constraintVertical_bias="0.328" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/resendCodeText"
         android:textColor="#0e0d0d"
         android:textSize="40px"
         android:textStyle="bold"

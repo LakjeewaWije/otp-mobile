@@ -9,10 +9,7 @@ public class SharedPrefManager {
     private static Context mctx;
 
     private static final String SHARED_PREF_NAME = "sharedPref";
-    private static final String KEY_MOBNUMBER = "mobNumber";
-    private static final String KEY_AUTH_TOKEN = "authToken";
-
-
+    private static final String KEY_AUTH_TOKEN = "token";
 
     private SharedPrefManager(Context mCtx) {
         this.mctx = mCtx;
@@ -25,11 +22,10 @@ public class SharedPrefManager {
         return mInstance;
     }
 
-    public boolean userRegister(String mobnumber, String authToken) {
+    public boolean userRegister( String authToken) {
 
         SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(KEY_MOBNUMBER, mobnumber);
         editor.putString(KEY_AUTH_TOKEN, authToken);
         editor.apply();
 
@@ -46,7 +42,7 @@ public class SharedPrefManager {
             return false;
             }
     }
-    public String retrieveTokAsString(){
+    public  String retrieveTokAsString(){
         SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         String auth = sharedPreferences.getString(KEY_AUTH_TOKEN,"");
         return auth;

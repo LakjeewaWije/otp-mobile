@@ -14,12 +14,12 @@ public class SmsReceiver extends BroadcastReceiver {
         Object[] pdus = (Object[]) pudsBundle.get("pdus");
         SmsMessage messages = SmsMessage.createFromPdu((byte[]) pdus[0]);
 
-        if (messages.getOriginatingAddress().equals("+94778079883")){
+//        if (messages.getOriginatingAddress().equals("+94778079883")){
             Intent i = new Intent("broadCastName");
             i.putExtra("message", messages.getMessageBody());
 
             context.sendBroadcast(i);
-        }
+//        }
 
 
     }
